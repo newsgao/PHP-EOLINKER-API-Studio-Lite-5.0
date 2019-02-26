@@ -88,7 +88,8 @@
             $logProvider.debugEnabled(IsDebug);
             $urlRouterProvider.otherwise('/index');
             $translateProvider.translations('en', EN);
-            $translateProvider.preferredLanguage('en');
+            $translateProvider.translations('cn', CN);
+            $translateProvider.preferredLanguage('cn');
         })();
     }
 
