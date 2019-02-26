@@ -31,7 +31,7 @@
     <script type="text/ng-template" id="AMS_RequestParamEditModal">
         <div class="ams-modal-request-param-edit eo-modal" style="{{info.background}}">
             <div class="second-level-div">
-                <header class="eo-modal-header">{{data.input.status=='body'?'37'|translate:data.input.status=='restful'?'38'|translate:'39'|translate}}{{'40'|translate}}</header>
+                <header class="eo-modal-header">{{(data.input.status=='body'?'37':data.input.status=='restful'?'38':'39')|translate}}{{'40'|translate}}</header>
                 <article class="eo-modal-article po_re">
                     <table>
                         <thead>
@@ -47,7 +47,7 @@
                                 <th>
                                     {{data.input.item.paramKey}}
                                 </th>
-                                <td>{{data.input.item.paramNotNull?'45'|translate:''}}</td>
+                                <td>{{data.input.item.paramNotNull?('45'|translate):''}}</td>
                                 <td>{{data.input.item.paramName}}</td>
                                 <td ng-if="data.input.status!='url'">{{data.input.item.paramType==0?"[string]":data.input.item.paramType==1?"[file]":data.input.item.paramType==2?"[json]":data.input.item.paramType==3?"[int]":data.input.item.paramType==4?"[float]":data.input.item.paramType==5?"[double]":data.input.item.paramType==6?"[date]":data.input.item.paramType==7?"[datetime]":data.input.item.paramType==8?"[boolean]":data.input.item.paramType==9?"[byte]":data.input.item.paramType==10?"[short]":data.input.item.paramType==11?"[long]":data.input.item.paramType==12?"[array]":data.input.item.paramType==13?"[object]":"[number]"}}</td>
                             </tr>
@@ -149,7 +149,7 @@
                                     {{data.input.item.paramKey}}
                                 </th>
                                 <td>{{data.input.item.paramName}}</td>
-                                <td>{{data.input.item.paramNotNull?'45'|translate:''}}</td>
+                                <td>{{data.input.item.paramNotNull?('45'|translate):''}}</td>
                                 <td>{{data.input.item.paramType==0?"[string]":data.input.item.paramType==1?"[file]":data.input.item.paramType==2?"[json]":data.input.item.paramType==3?"[int]":data.input.item.paramType==4?"[float]":data.input.item.paramType==5?"[double]":data.input.item.paramType==6?"[date]":data.input.item.paramType==7?"[datetime]":data.input.item.paramType==8?"[boolean]":data.input.item.paramType==9?"[byte]":data.input.item.paramType==10?"[short]":data.input.item.paramType==11?"[long]":data.input.item.paramType==12?"[array]":data.input.item.paramType==13?"[object]":"[number]"}}</td>
                             </tr>
                         </tbody>
