@@ -514,9 +514,9 @@
                         }
                 }
             }
-            if (vm.data.reset.status != 'add') {
-                fun.monitorEditParam(status, arg.item);
-            }
+            // if (vm.data.reset.status != 'add') {
+            //     fun.monitorEditParam(status, arg.item);
+            // }
         }
         vm.fun.add = function (status, arg) {
             var template = {
@@ -652,9 +652,9 @@
             }
         }
         vm.fun.delete = function (status, arg) {
-            if (vm.data.reset.status != 'add') {
-                fun.monitorDeleteParam(status, arg.item, arg.$index);
-            }
+            // if (vm.data.reset.status != 'add') {
+            //     fun.monitorDeleteParam(status, arg.item, arg.$index);
+            // }
             switch (status) {
                 case 'header':
                     {
