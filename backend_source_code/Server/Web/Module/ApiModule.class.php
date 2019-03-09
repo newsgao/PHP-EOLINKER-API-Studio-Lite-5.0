@@ -110,6 +110,10 @@ class ApiModule
             $cacheJson['baseInfo']['apiUpdateTime'] = $updateTime;
             $cacheJson['baseInfo']['apiFailureStatusCode'] = $failure_status_code;
             $cacheJson['baseInfo']['apiSuccessStatusCode'] = $success_status_code;
+            $cacheJson['baseInfo']['apiNoteType'] = $apiNoteType;
+            $cacheJson['baseInfo']['apiNote'] = $apiNote;
+            $cacheJson['baseInfo']['apiNoteRaw'] = $apiNoteRaw;
+
             $cacheJson['headerInfo'] = $apiHeader;
             $cacheJson['mockInfo']['mockRule'] = $mockRule;
             $cacheJson['mockInfo']['mockResult'] = $mockResult;
@@ -222,7 +226,10 @@ class ApiModule
                 $cacheJson['baseInfo']['apiUpdateTime'] = $updateTime;
                 $cacheJson['baseInfo']['apiFailureStatusCode'] = $failure_status_code;
                 $cacheJson['baseInfo']['apiSuccessStatusCode'] = $success_status_code;
-               
+                $cacheJson['baseInfo']['apiNoteType'] = $apiNoteType;
+                $cacheJson['baseInfo']['apiNote'] = $apiNote;
+                $cacheJson['baseInfo']['apiNoteRaw'] = $apiNoteRaw;
+
                 $cacheJson['headerInfo'] = $apiHeader;
                 $cacheJson['mockInfo']['mockRule'] = $mockRule;
                 $cacheJson['mockInfo']['mockResult'] = $mockResult;

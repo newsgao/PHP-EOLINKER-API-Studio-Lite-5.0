@@ -514,9 +514,9 @@
                         }
                 }
             }
-            if (vm.data.reset.status != 'add') {
-                fun.monitorEditParam(status, arg.item);
-            }
+            // if (vm.data.reset.status != 'add') {
+            //     fun.monitorEditParam(status, arg.item);
+            // }
         }
         vm.fun.add = function (status, arg) {
             var template = {
@@ -652,9 +652,9 @@
             }
         }
         vm.fun.delete = function (status, arg) {
-            if (vm.data.reset.status != 'add') {
-                fun.monitorDeleteParam(status, arg.item, arg.$index);
-            }
+            // if (vm.data.reset.status != 'add') {
+            //     fun.monitorDeleteParam(status, arg.item, arg.$index);
+            // }
             switch (status) {
                 case 'header':
                     {
@@ -1273,9 +1273,10 @@
                                 vm.interaction.response.apiInfo.apiProtocol = "" + vm.interaction.response.apiInfo.apiProtocol;
                                 vm.interaction.response.apiInfo.apiRequestType = "" + vm.interaction.response.apiInfo.apiRequestType;
                                 vm.interaction.response.apiInfo.apiRequestParamType = "" + vm.interaction.response.apiInfo.apiRequestParamType;
-                                vm.interaction.response.apiInfo.apiNoteType = "" + vm.interaction.response.apiInfo.apiNoteType;
-                                vm.interaction.response.apiInfo.apiRichNote = vm.interaction.response.apiInfo.apiNoteType == '0' ? vm.interaction.response.apiInfo.apiNote : '';
-                                vm.interaction.response.apiInfo.apiMarkdownNote = vm.interaction.response.apiInfo.apiNoteType == '1' ? vm.interaction.response.apiInfo.apiNote : '';
+                                vm.interaction.response.apiInfo.apiNoteType = "" + fun.getOrDefault(vm.interaction.response.apiInfo.apiNoteType, '1');
+                                vm.interaction.response.apiInfo.apiNoteRaw = fun.getOrDefault(vm.interaction.response.apiInfo.apiNoteRaw, '');
+                                vm.interaction.response.apiInfo.apiRichNote = vm.interaction.response.apiInfo.apiNoteType == '0' ? fun.getOrDefault(vm.interaction.response.apiInfo.apiNote, '') : '';
+                                vm.interaction.response.apiInfo.apiMarkdownNote = vm.interaction.response.apiInfo.apiNoteType == '1' ? fun.getOrDefault(vm.interaction.response.apiInfo.apiNote, '') : '';
                                 try {
                                     response.apiInfo.authInfo.status = response.apiInfo.authInfo.status || "0";
                                 } catch (e) {}
@@ -1375,6 +1376,12 @@
             } else {
                 fun.initCommonExpression();
             }
+        }
+        fun.getOrDefault = function (optional, defaultValue) {
+            if (optional == undefined) {
+                return defaultValue;
+            }
+            return optional;
         }
         vm.fun.init = function () {
             if (GroupService.get()) {
